@@ -6,6 +6,7 @@ gem 'rails', '4.1.12'
 # Use mysql as the database for Active Record
 gem 'mysql2', '~> 0.3.20'
 # Use SCSS for stylesheets
+gem 'state_machine'
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -43,7 +44,8 @@ group :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'cucumber'
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
 end
 
 group :development , :test do

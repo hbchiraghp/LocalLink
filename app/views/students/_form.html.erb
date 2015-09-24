@@ -1,0 +1,87 @@
+<%= form_for(@student) do |f| %>
+    <% if @student.errors.any? %>
+        <div id="error_explanation">
+        <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+        <ul>
+            <% @student.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>
+
+<div class="field">
+    <%= f.label :enroll_no %><br>
+    <%= f.text_field :enroll_no %>
+</div>
+
+<div class="field">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+</div>
+
+<div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+</div>
+
+<div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+</div>
+
+<div class="field">
+    <%= f.label :gender %><br>
+    <%= f.select :gender,Student.genders.keys, { :include_blank => true } %>
+</div>
+
+<div class="field">
+    <%= f.label :date_of_birth %><br>
+    <%= f.date_select :date_of_birth %>
+</div>
+
+<div class="field">
+    <%= f.label :phone %><br>
+    <%= f.text_field :phone %>
+</div>
+
+<div class="field">
+    <%= f.label :address1 %><br>
+    <%= f.text_field :address1 %>
+</div>
+
+<div class="field">
+    <%= f.label :address2 %><br>
+    <%= f.text_field :address2 %>
+</div>
+
+<div class="field">
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
+</div>
+
+<div class="field">
+    <%= f.label :country %><br>
+    <%= f.text_field :country %>
+</div>
+
+<div class="field">
+    <%= f.label :postcode %><br>
+    <%= f.text_field :postcode %>
+</div>
+
+<div class="field">
+    <%= f.label :avatar %><br>
+    <%= f.text_field :avatar %>
+</div>
+
+<div class="field">
+    <%= f.label :status %><br>
+    <%= f.select :status, Student.statuses.keys, { :include_blank => true } %>
+</div>  
+
+<div class="actions">
+    <%= f.submit %>
+</div>
+<% end %>
