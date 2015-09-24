@@ -7,8 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+<div id="main-wrapper">
+	<section id="mid-wrap">
+		<div class="add-user-wrapper container-fluid">
+      <div class="container">
+				<%= yield %>
+			</div>
+		</div>
+	</section>
+</div>
 </body>
 </html>

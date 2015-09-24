@@ -1,21 +1,25 @@
 class Student < ActiveRecord::Base
+	# Image Uploader
+	mount_uploader :avatar, UploadUploader
 
-	#Model validations
-	validates :enroll_no,:first_name,:last_name,:email,:status, presence: true
+	# Model validations
+	validates :enroll_no,	:first_name,	:last_name,	:email,	:status, presence: true
 	validates :gender, inclusion: { in: ['male', 'female'] }
 	validates :status, inclusion: { in: ['active', 'inactive'] }
-	validates :enroll_no,:email, uniqueness: true
+	validates :enroll_no,	:email, uniqueness: true
 	validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
-	validates :email, length: { maximum: 60, too_long: "%{count} characters is the maximum allowed" }
-  validates :enroll_no,:first_name,:last_name, length: { maximum: 30, too_long: "%{count} characters is the maximum allowed" }
-  validates :city,:country, length: { maximum: 50, too_long: "%{count} characters is the maximum allowed" } 
+	validates :email, length: { maximum: 60,
+															too_long: "%{count} characters is the maximum allowed" }
+  validates :enroll_no,:first_name,	:last_name, length: { maximum: 30, 
+  																												too_long: "%{count} characters is the maximum allowed" }
+  validates :city,	:country, length: { maximum: 50,
+  																			too_long: "%{count} characters is the maximum allowed" } 
 
 	# Enum attributes
 	enum status: { active: 1, inactive: 0 }
 	enum gender: [ :male, :female ]
 	
 	# Model scopes
-
 	# default_scope { where(deleted: false) }
 	scope :active, -> { where(status: 1,deleted: false) }
 	scope :inactive, -> { where(status: 0,deleted: false) }
@@ -34,7 +38,7 @@ class Student < ActiveRecord::Base
   	first_name+" "+last_name
   end
 
-  def enroll_no=(enroll_no)
+  def enroll_no=( enroll_no )
     super unless enroll_no_frozen?
   end
 

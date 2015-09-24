@@ -1,78 +1,91 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Enroll no:</strong>
-  <%= @student.enroll_no %>
-</p>
-
-<p>
-  <strong>First name:</strong>
-  <%= @student.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @student.last_name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @student.email %>
-</p>
-
-<p>
-  <strong>Gender:</strong>
-  <%= @student.gender %>
-</p>
-
-<p>
-  <strong>Date of birth:</strong>
-  <%= @student.date_of_birth %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @student.phone %>
-</p>
-
-<p>
-  <strong>Address1:</strong>
-  <%= @student.address1 %>
-</p>
-
-<p>
-  <strong>Address2:</strong>
-  <%= @student.address2 %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @student.city %>
-</p>
-
-<p>
-  <strong>Country:</strong>
-  <%= @student.country %>
-</p>
-
-<p>
-  <strong>Postcode:</strong>
-  <%= @student.postcode %>
-</p>
-
-<p>
-  <strong>Avatar:</strong>
-  <%= @student.avatar %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @student.status %>
-</p>
-
-<p>
-  <strong>Deleted:</strong>
-  <%= @student.deleted %>
-</p>
-
-<%= link_to 'Back', students_path %>
+<div class="add-user-wrapper container-fluid">
+  <div class="container">
+    <div class="add-user">
+      <div class="new-user user-details">
+        <h1><%= link_to "Students",students_path %> >> Details</h1>
+        <form>
+          <div class="mid-title">
+          <div class="login-form">
+          <div class="details-row col-md-12 col-sm-12 col-xs-12">
+            <div class="pfl-pic col-md-2 col-sm-2">
+              <%= image_tag(@student.avatar.url(:thumb)) %>              
+            </div>
+            <div class="col-md-4 col-sm-4 pfl-title">
+              <h3><%= @student.name %></h3>              
+            </div>
+          </div>          
+          <div class="details-row col-sm-12 col-xs-12">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="details-l">
+                <label>Email</label>
+              </div>
+              <div class="details-r"><span><%= @student.email %></span></div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="details-l">
+                <label>Gender</label>
+              </div>
+              <div class="details-r"><span><%= @student.gender.to_s.titlecase %></span></div>
+            </div>
+          </div>
+          <div class="details-row col-md-12 col-sm-12 col-xs-12">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="details-l">
+                <label>Date Of Birth</label>
+              </div>
+              <div class="details-r"><span><%= @student.date_of_birth %></span></div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="details-l">
+                <label>Status</label>
+              </div>
+              <div class="details-r"><span><%= @student.status.to_s.titlecase %></span></div>
+            </div>
+          </div>
+          <div class="details-row col-md-12 col-sm-12 col-xs-12">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="details-l">
+                <label>Address 1</label>
+              </div>
+              <div class="details-r"><span><%= @student.address1 %></span></div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="details-l">
+                <label>Address 2</label>
+              </div>
+              <div class="details-r"><span><%= @student.address2 %></span></div>
+            </div>
+          </div>
+          <div class="details-row col-md-12 col-sm-12 col-xs-12">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="details-l">
+                <label>City</label>
+              </div>
+              <div class="details-r"><span><%= @student.city %></span></div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="details-l">
+                <label>Country</label>
+              </div>
+              <div class="details-r"><span><%= @student.country %></span></div>
+            </div>
+          </div>        
+          <div class="details-row col-md-12 col-sm-12 col-xs-12">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="details-l">
+                <label>Phone</label>
+              </div>
+              <div class="details-r"><span><%= @student.phone %></span></div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="details-l">
+                <label>Postcode</label>
+              </div>
+              <div class="details-r"><span><%= @student.postcode %></span></div>
+            </div>
+          </div>
+        </form>            
+      </div>
+    </div>
+  </div>
+</div>

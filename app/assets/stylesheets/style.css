@@ -1,0 +1,123 @@
+/* CSS Document */
+@font-face {
+    font-family: 'latobold';
+    src: asset-data-url('fonts/lato-bold_2-webfont.eot');
+    src: asset-data-url('fonts/lato-bold_2-webfont.eot?#iefix') format('embedded-opentype'),
+         asset-data-url('fonts/lato-bold_2-webfont.woff2') format('woff2'),
+         asset-data-url('fonts/lato-bold_2-webfont.woff') format('woff'),
+         asset-data-url('fonts/lato-bold_2-webfont.ttf') format('truetype'),
+         asset-data-url('fonts/lato-bold_2-webfont.svg#latobold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'latolight';
+    src: asset-data-url('fonts/lato-light_2-webfont.eot');
+    src: asset-data-url('fonts/lato-light_2-webfont.eot?#iefix') format('embedded-opentype'),
+         asset-data-url('fonts/lato-light_2-webfont.woff2') format('woff2'),
+         asset-data-url('fonts/lato-light_2-webfont.woff') format('woff'),
+         asset-data-url('fonts/lato-light_2-webfont.ttf') format('truetype'),
+         asset-data-url('fonts/lato-light_2-webfont.svg#latolight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'latoregular';
+    src: asset-data-url('fonts/lato-regular_2-webfont.eot');
+    src: asset-data-url('fonts/lato-regular_2-webfont.eot?#iefix') format('embedded-opentype'),
+         asset-data-url('fonts/lato-regular_2-webfont.woff2') format('woff2'),
+         asset-data-url('fonts/lato-regular_2-webfont.woff') format('woff'),
+         asset-data-url('fonts/lato-regular_2-webfont.ttf') format('truetype'),
+         asset-data-url('fonts/lato-regular_2-webfont.svg#latoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'questrialregular';
+    src: asset-data-url('fonts/questrial-regular_0-webfont.eot');
+    src: asset-data-url('fonts/questrial-regular_0-webfont.eot?#iefix') format('embedded-opentype'),
+         asset-data-url('fonts/questrial-regular_0-webfont.woff2') format('woff2'),
+         asset-data-url('fonts/questrial-regular_0-webfont.woff') format('woff'),
+         asset-data-url('fonts/questrial-regular_0-webfont.ttf') format('truetype'),
+         asset-data-url('fonts/questrial-regular_0-webfont.svg#questrialregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+/** added on 24/9/2015 **/
+body{font-family:'latoregular';}
+.add-user{box-sizing: border-box;clear: both;margin: 20px auto;width: 100%; border:1px solid #ececf6;}
+.new-user .login-form { padding:30px 47px; display: inline-block;}
+.user-details {width:100%; background-color:#fff; display:inline-block; padding:20px 0px;}
+.add-user-wrapper  {background-color:#f7f7fe; margin: 0px auto;}
+.user-title {width:100%; background-color:#5b5b90; padding:0px 50px 10px;}
+.user-title h1, .new-user h1 {font-size:24px; line-height:30px; color:#656598; font-weight:700; margin:0; padding:10px 47px;}
+.new-user h1::after {content:''; display: block; border:1px solid #656598; margin-top:10px;}
+.login-form-row {display: inline-block; margin-bottom: 15px; width:100%;}
+.login-l {float:left; width:45%;}
+.login-r {float:right; width:45%;}
+.login-full {width:100%; display: inline-block;}
+.user-input {margin:10px 0px 0px 0px; position:relative;}
+.user-input input {width:100%; padding:2% 5%; border:1px solid #cccccb; border-radius:5px; font-size:16px; color:#cccccb;}
+.user-input textarea {width:100%; padding:2% 3%; border:1px solid #cccccb; border-radius:5px; font-size:16px; color:#cccccb; min-height:200px;}
+.login-form-row label {font-size:15px; color:#000; line-height:18px; display: block; font-weight:700;}
+.login-form-logbtn {text-align:right;}
+.login-form-logbtn input {min-width:160px; padding:5px 15px; background-color:#656598; border:1px solid #656598;-webkit-transition: all 0.30s ease-in-out;  -moz-transition: all 0.30s ease-in-out;  -ms-transition: all 0.30s ease-in-out;  -o-transition: all 0.30s ease-in-out; font-size:18px; font-weight:700; position:relative;}
+.login-form-logbtn input:hover {background-color:#5b5b90; border:1px solid #5b5b90;-webkit-transition: all 0.30s ease-in-out;  -moz-transition: all 0.30s ease-in-out;  -ms-transition: all 0.30s ease-in-out;  -o-transition: all 0.30s ease-in-out;}
+input[type=text], textarea {  -webkit-transition: all 0.30s ease-in-out;  -moz-transition: all 0.30s ease-in-out;  -ms-transition: all 0.30s ease-in-out;  -o-transition: all 0.30s ease-in-out;  outline: none;}
+input[type=text]:focus, textarea:focus {  box-shadow: 0 0 5px rgba(101, 101, 152, 0.7);  border: 1px solid rgba(101, 101, 152, 0.7);}
+.file-button {background: #2da756 none repeat scroll 0 0;border-radius: 3px;color: #ffffff;cursor: pointer;display: block;float: left;font-size: 13px;height: 32px;line-height: 32px;margin: 9px 0 0;padding: 0;position: relative;text-align: center;width: 120px;}
+.file-button input {cursor: pointer;height: 100%;opacity: 0;position: absolute;width: 100%;z-index: 11;}
+ /*** Custom Checkbox & radio ***/
+.custom-chk input[type="checkbox"], .custom-opt input[type="radio"] { left: -9999px; position: absolute; }
+.custom-chk label, .custom-opt label { padding-left: 30px; min-height: 22px; display: block; margin-bottom: 0px;color:#ababaa; }
+.custom-chk label { background: url(/assets/chk-uncheck.png) no-repeat; }
+.custom-chk label.checked { background: url(/assets/chk-checked.png) no-repeat; }
+
+/*** Custom radio button ***/
+.custom-opt label { min-width: 0px; padding-left: 24px; line-height:18px;float:left; position:relative; margin-right: 20px; margin-top:10px; font-weight:400;}
+.custom-opt label:before { background-image: url("/assets/ui-icons.png"); background-position: 0px; height: 16px; width: 16px; position: absolute; left: 0px; top: 2px; content: ''; }
+.custom-opt label.checked:before { background-position:-17px 0;  }
+.details-row label {float:left; font-size:14px; line-height:20px; font-weight:700; color:#7a7ac2;}
+.details-row span {float:left; margin:0 0 0 10px; color:#000; font-size:14px; line-height:20px;}
+.details-row {display: inline-block; margin-bottom:10px;}
+.details-l {float:left; width:25%;}
+.details-c {float:left; width:3%; text-align:center; color:#000; font-size:16px;}
+.details-r {float:left; width:55%;}
+.custom-select-box span, .custom-select-box.style-1::before, .input-box .custom-select-box.style-1 {height: 32px;line-height: 32px;}
+.custom-select-box.style-1::before {background-position: -34px 0px;height: 8px;right: 0;width: 16px; right:12px; top:15px; background-repeat: no-repeat;}
+.custom-select-box::before {background-image: url("/assets/ui-icons.png");background-position: -34px 0px;bottom: 0;content: "";height: 6px;margin: auto 0;position: absolute;right: 10px;top: 0;width: 9px;z-index: 2;}
+.custom-select-box select { height: 100%;left: 0;opacity: 0;position: absolute;top: 3px;width: 100%;z-index: 11;}
+select option {font-size: 12px;padding: 2px 14px;}
+.custom-select-box span, .custom-select-box.style-1::before, .input-box .custom-select-box.style-1 {height: 32px;line-height: 32px;}
+.custom-select-box span {color: #cccccb;display: block;font-size: 16px;height: 30px;line-height: 42px; padding-left:3%;}
+.custom-select-box {border: 1px solid #cccccb;border-radius: 4px;height: 42px;line-height: 42px;padding: 0 6px;position: relative;width: 100%;}
+.no-image {float:left; width:50px; height:50px; margin:0 0 0 30px; border-radius: 4px;}
+.cale-ico {position:absolute; width:20px; height:20px; background:url(/assets/calender.png) no-repeat center; right:15px; top:13px; background-size:100%;}
+.shcedule-form {width:100%; margin:20px 0 0 0;}
+.mid-title h2 {font-size:20px; line-height:22px; color:#2c2c66; margin-bottom:20px; font-weight:700;text-align: center;}
+.schedule-table {width:100%; border-color:#d7d7fc;}
+.schedule-table thead tr {background-color:#ebebfd;}
+.schedule-table thead tr th {padding:1% 2%; text-align:left; font-size:14px; line-height:16px; color:#000; border-color:#d7d7fc;}
+.schedule-table tbody tr td {padding:1% 2%; text-align:left; font-size:14px; line-height:16px; color:#000; border-color:#d7d7fc;}
+.schedule-table tbody tr.even {background-color:#f4f4fe;}
+.schedule-table tbody tr:hover {background-color:#f4f4fe;} 
+.shcedule-form .login-form-logbtn {margin: 20px 0px 0px 0px;}
+.pfl-pic img {    border-radius: 10px;    width: 120px; margin-bottom:10px;}
+.pfl-title h3 {font-size:18px; line-height:20px; color:#7a7ac2; margin:0; font-weight:700;}
+.pfl-title p {font-size:14px; line-height:16px; color:#000; font-weight:400; margin:5px 0;}
+.dtl-file{height:30px; width:70px; margin:-3px 0 0 0;}
+#preview-box img{height: 100px;width: 100px;}
+.right-link{float: right;margin-right: 50px;}
+.search-btn {width: 54%;}
+.search-input{margin: 0px;}
+.search-form{padding: 0px !important;margin-left: 50px;}

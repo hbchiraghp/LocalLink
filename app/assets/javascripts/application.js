@@ -2,7 +2,7 @@
 // listed below.
 //
 // Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
-// or any plugin's vendor/assets/javascripts directory can be referenced here using a relative path.
+// or vendor/assets/javascripts of plugins, if any, can be referenced here using a relative path.
 //
 // It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
 // compiled file.
@@ -12,5 +12,24 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require turbolinks
 //= require_tree .
+
+$(function() {
+  // date picker 
+  $('.datepicker').datepicker();
+
+  // Privew Image
+  var avatar = $("#student_avatar");
+  if (avatar.length > 0) {
+	  avatar.addEventListener("change",previewImages,false); //bind the function to the input
+	  function previewImages(){
+	    var fileList = this.files;    
+	    var anyWindow = window.URL || window.webkitURL;
+	    var objectUrl = anyWindow.createObjectURL(fileList[0]);    
+	    $('#preview-box').html('<img class="profileimg" src="' + objectUrl + '" /> ');
+	    //$("#clear").show();
+	  }  	
+  };
+});
