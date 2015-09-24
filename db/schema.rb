@@ -14,14 +14,21 @@
 ActiveRecord::Schema.define(version: 20150924065453) do
 
   create_table "students", force: true do |t|
-    t.string   "enroll_no",     limit: 30, default: "", null: false
-    t.string   "first_name",    limit: 30, default: "", null: false
-    t.string   "last_name",     limit: 30, default: "", null: false
-    t.string   "email",         limit: 60, default: "", null: false
-    t.integer  "gender",                   default: 0,  null: false
+    t.string   "enroll_no",     limit: 30, default: "",    null: false
+    t.string   "first_name",    limit: 30, default: "",    null: false
+    t.string   "last_name",     limit: 30, default: "",    null: false
+    t.string   "email",         limit: 60, default: "",    null: false
+    t.integer  "gender"
     t.date     "date_of_birth"
     t.string   "phone"
-    t.text     "address"
+    t.string   "address1",                 default: "",    null: false
+    t.string   "address2",                 default: "",    null: false
+    t.string   "city",          limit: 50
+    t.string   "country",       limit: 50
+    t.string   "postcode",      limit: 10, default: "",    null: false
+    t.string   "avatar"
+    t.integer  "status",                   default: 1,     null: false
+    t.boolean  "deleted",                  default: false, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
