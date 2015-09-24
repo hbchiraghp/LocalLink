@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require jquery-ui
 //= require turbolinks
@@ -23,7 +24,7 @@ $(function() {
   // Privew Image
   var avatar = $("#student_avatar");
   if (avatar.length > 0) {
-	  avatar.addEventListener("change",previewImages,false); //bind the function to the input
+	  avatar[0].addEventListener("change",previewImages,false); //bind the function to the input
 	  function previewImages(){
 	    var fileList = this.files;    
 	    var anyWindow = window.URL || window.webkitURL;
