@@ -1,0 +1,28 @@
+  [1m[36m (147.6ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (258.2ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to Add (20150924065057)
+  [1m[35m (0.7ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20150924065057')[0m
+  [1m[35m (50.8ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateStudents (20150924065453)
+  [1m[35m (108.1ms)[0m  CREATE TABLE `students` (`id` int(11) auto_increment PRIMARY KEY, `enroll_no` varchar(255), `first_name` varchar(255), `last_name` varchar(255), `email` varchar(255), `gender` int(11), `date_of_birth` varchar(255), `phone` varchar(255), `postal_code` int(11), `address` text) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150924065453')
+  [1m[36m (61.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+Migrating to CreateStudents (20150924065453)
+  [1m[36m (65.0ms)[0m  [1mDROP TABLE `students`[0m
+  [1m[35mSQL (46.9ms)[0m  DELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20150924065453'
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateStudents (20150924065453)
+  [1m[35m (112.6ms)[0m  CREATE TABLE `students` (`id` int(11) auto_increment PRIMARY KEY, `enroll_no` varchar(30) DEFAULT '' NOT NULL, `first_name` varchar(30) DEFAULT '' NOT NULL, `last_name` varchar(30) DEFAULT '' NOT NULL, `email` varchar(60) DEFAULT '' NOT NULL, `gender` int(11) DEFAULT 0 NOT NULL, `date_of_birth` date, `phone` varchar(255), `address` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150924065453')
+  [1m[36m (51.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
