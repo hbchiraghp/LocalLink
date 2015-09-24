@@ -1,6 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Students List</h1>
+<div class="search">
+  <%= form_tag({}, method: "get") do %>
+    <%= text_field_tag :search,params[:search] ,placeholder: "Search first name or last name or full name" ,:size=>30%>
+    <%= submit_tag "Search" %>
+  <% end %>
+</div>
 
 <table>
   <thead>

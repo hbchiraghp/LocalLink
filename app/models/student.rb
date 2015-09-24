@@ -20,6 +20,7 @@ class Student < ActiveRecord::Base
 	scope :active, -> { where(status: 1,deleted: false) }
 	scope :inactive, -> { where(status: 0,deleted: false) }
 	scope :deleted, -> { where(deleted: true) }
+	scope :search,	-> (key_word) { where("first_name LIKE ? OR last_name LIKE ? OR CONCAT(first_name,' ',last_name) LIKE ?","%#{key_word}%","%#{key_word}%","%#{key_word}%") }
 
 	def initialize(attributes=nil, *args)
     super

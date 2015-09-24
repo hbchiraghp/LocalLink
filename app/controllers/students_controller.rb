@@ -2,7 +2,11 @@ class StudentsController < ApplicationController
   before_action :find_student, only: [:show, :edit, :update, :destroy]
   
   def index
-    @students = Student.active    
+  	if params[:search].present?
+  		@students = Student.active.search(params[:search])
+  	else  		
+    	@students = Student.active
+  	end
   end
   
   def show;  end
