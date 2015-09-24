@@ -14,19 +14,27 @@
 ActiveRecord::Schema.define(version: 20150924064137) do
 
   create_table "students", force: :cascade do |t|
-    t.string   "enroll_no",     limit: 30,    default: "", null: false
-    t.string   "first_name",    limit: 30,    default: "", null: false
-    t.string   "last_name",     limit: 30,    default: "", null: false
-    t.string   "email",         limit: 60,    default: "", null: false
-    t.integer  "gender",        limit: 4,     default: 0,  null: false
+    t.string   "enroll_no",     limit: 30,  default: "",    null: false
+    t.string   "first_name",    limit: 30,  default: "",    null: false
+    t.string   "last_name",     limit: 30,  default: "",    null: false
+    t.string   "email",         limit: 60,  default: "",    null: false
+    t.integer  "gender",        limit: 4
     t.date     "date_of_birth"
     t.string   "phone",         limit: 255
-    t.text     "address",       limit: 65535
+    t.string   "address1",      limit: 255, default: "",    null: false
+    t.string   "address2",      limit: 255, default: "",    null: false
+    t.string   "city",          limit: 50
+    t.string   "country",       limit: 50
+    t.string   "postcode",      limit: 10,  default: "",    null: false
+    t.string   "avatar",        limit: 255
+    t.integer  "status",        limit: 4,   default: 1,     null: false
+    t.boolean  "deleted",                   default: false, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "students", ["email"], name: "index_students_on_email", using: :btree
+  add_index "students", ["enroll_no"], name: "index_students_on_enroll_no", using: :btree
   add_index "students", ["first_name"], name: "index_students_on_first_name", using: :btree
   add_index "students", ["last_name"], name: "index_students_on_last_name", using: :btree
 
