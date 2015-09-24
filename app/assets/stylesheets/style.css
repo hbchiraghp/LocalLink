@@ -121,3 +121,4 @@ select option {font-size: 12px;padding: 2px 14px;}
 .search-btn {width: 54%;}
 .search-input{margin: 0px;}
 .search-form{padding: 0px !important;margin-left: 50px;}
+#error_explanation{margin-left:50px; }
