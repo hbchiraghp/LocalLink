@@ -25,6 +25,9 @@
 class Student < ActiveRecord::Base
 
 
+  enum status: { active: 1, inactive: 0 }
+  enum gender: {male: 1, female: 0} 
+  
   validates :enroll_no,:first_name,:last_name,:email,:status, presence: true
   validates :gender, inclusion: { in: ['male', 'female'] }
   validates :status, inclusion: { in: ['active', 'inactive'] }
@@ -33,15 +36,12 @@ class Student < ActiveRecord::Base
   validates :email, length: { maximum: 60, too_long: "%{count} characters is the maximum allowed" }
   validates :enroll_no,:first_name,:last_name, length: { maximum: 30, too_long: "%{count} characters is the maximum allowed" }
   validates :city,:country, length: { maximum: 50, too_long: "%{count} characters is the maximum allowed" } 
+  mount_uploader :avatar, UploadUploader
 
-
-  enum status: { active: 1, inactive: 0 }
-  enum gender: {male: 1, female: 0} 
-  
   scope :active, -> { where(deleted: false,status: 1) }
   scope :inactive, -> { where(status: 0,deleted: false) }
   scope :deleted, -> { where(deleted: true) }
-  
+
 
   def initialize(attributes=nil, *args)
     super
@@ -51,6 +51,9 @@ class Student < ActiveRecord::Base
     end    
   end
 
+  def name
+    first_name+" "+last_name
+  end
 
   def enroll_no=(enroll_no)
     super unless enroll_no_frozen?

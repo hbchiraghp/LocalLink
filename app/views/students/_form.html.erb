@@ -1,87 +1,146 @@
 <%= form_for(@student) do |f| %>
-    <% if @student.errors.any? %>
-        <div id="error_explanation">
-        <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
+  <% if @student.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@student.errors.count, "error") %> occurred:</h2>
 
-        <ul>
-            <% @student.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-            <% end %>
-        </ul>
+      <ul>
+      <% @student.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
     </div>
+  <% end %>
+  <div class="login-form">
+    <div class="login-form-row">
+      <div class="login-l">
+        <%= f.label :first_name %>        
+        <div class="user-input">
+          <%= f.text_field :first_name ,placeholder: "First Name", class: "input-xlarge" %>          
+        </div>
+      </div>
+      <div class="login-r">
+        <%= f.label :last_name %>        
+        <div class="user-input">
+          <%= f.text_field :last_name ,placeholder: "Last Name", class: "input-xlarge" %>          
+        </div>
+      </div>
+    </div>
+    <div class="login-form-row">
+      <div class="login-l">
+        <%= f.label :email %>        
+        <div class="user-input">
+          <%= f.text_field :email ,placeholder: "First Name", class: "input-xlarge" %>          
+        </div>
+      </div>
+      <div class="login-r">
+        <label>Profile Picture</label>
+        <div class="file-button">
+          <%=f.file_field :avatar%>
+          Upload Image </div>
+          <div id="preview-box">
+            <%= image_tag(@student.avatar.url(:thumb),class: "no-image") %>
+          </div>
+      </div>
+    </div>
+    <div class="login-form-row">
+      <div class="login-l">
+        <%= f.label :phone %>        
+        <div class="user-input">
+          <%= f.text_field :phone ,placeholder: "Phone Number", class: "input-xlarge" %>          
+        </div>
+      </div>
+      <div class="login-r">
+        <%= f.label :enroll_no %>        
+        <div class="user-input">
+          <%= f.text_field :enroll_no ,disabled: true %>          
+        </div>
+      </div>
+    </div>
+    <div class="login-form-row">
+      <div class="login-l">
+        <%= f.label :gender %>
+        <div class="custom-opt">          
+          <label class="">
+            <%= f.radio_button :gender, 'male' %>
+            Male</label>
+          <label class="">
+            <%= f.radio_button :gender, 'female' %>
+            FeMale</label>
+        </div>
+      </div>
+      <div class="login-r">        
+        <%= f.label :date_of_birth %>
+        <div class="user-input">
+          <%= f.text_field :date_of_birth ,placeholder: "Date of Birth", class: "input-xlarge datepicker"%>          
+          <a href="#" class="cale-ico"></a>
+        </div>
+      </div>
+    </div>
+    <div class="login-form-row">
+      <div class="login-l">
+        <%= f.label :city %>        
+        <div class="user-input">
+          <%= f.text_field :city ,placeholder: "City", class: "input-xlarge" %>          
+        </div>
+      </div>
+      <div class="login-r">
+        <%= f.label :country %>        
+        <div class="user-input">
+          <%= f.text_field :country ,placeholder: "Country", class: "input-xlarge" %>          
+        </div>
+      </div>
+    </div>    
+    
+    <div class="login-form-row">
+      <div class="login-l">
+        <%= f.label :postcode ,"Postal Code" %>        
+        <div class="user-input">
+          <%= f.text_field :postcode ,placeholder: "Postal Code", class: "input-xlarge" %>          
+        </div>
+      </div>
+      <div class="login-r">
+        <%= f.label :status %>
+        <div class="custom-opt">
+          <label class="">
+            <%= f.radio_button :status, 'active' %>
+            Active</label>
+          <label class="">
+            <%= f.radio_button :status, 'inactive' %>
+            Inactive</label>
+        </div>
+      </div>
+      <div class="login-form-row">
+        <div class="login-l">
+          <%= f.label :address1 %>        
+          <div class="user-input">
+            <%= f.text_field :address1 ,placeholder: "Address1", class: "input-xlarge" %>          
+          </div>
+        </div>
+        <div class="login-r">
+          <%= f.label :address2 %>        
+          <div class="user-input">
+            <%= f.text_field :address2 ,placeholder: "Address2", class: "input-xlarge" %>          
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="login-l">
+      <%=link_to "Back","/students",class: "btn btn-success"%>
+    </div>
+    <div class="login-form-logbtn">
+      <%= f.submit "#{@student.new_record? ? 'Create' : 'Update'} Student" ,:class=>"submit-form btn btn-success" %>      
+    </div>
+  </div>
 <% end %>
-
-<div class="field">
-    <%= f.label :enroll_no %><br>
-    <%= f.text_field :enroll_no %>
-</div>
-
-<div class="field">
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
-</div>
-
-<div class="field">
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
-</div>
-
-<div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-</div>
-
-<div class="field">
-    <%= f.label :gender %><br>
-    <%= f.select :gender,Student.genders.keys, { :include_blank => true } %>
-</div>
-
-<div class="field">
-    <%= f.label :date_of_birth %><br>
-    <%= f.date_select :date_of_birth %>
-</div>
-
-<div class="field">
-    <%= f.label :phone %><br>
-    <%= f.text_field :phone %>
-</div>
-
-<div class="field">
-    <%= f.label :address1 %><br>
-    <%= f.text_field :address1 %>
-</div>
-
-<div class="field">
-    <%= f.label :address2 %><br>
-    <%= f.text_field :address2 %>
-</div>
-
-<div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
-</div>
-
-<div class="field">
-    <%= f.label :country %><br>
-    <%= f.text_field :country %>
-</div>
-
-<div class="field">
-    <%= f.label :postcode %><br>
-    <%= f.text_field :postcode %>
-</div>
-
-<div class="field">
-    <%= f.label :avatar %><br>
-    <%= f.text_field :avatar %>
-</div>
-
-<div class="field">
-    <%= f.label :status %><br>
-    <%= f.select :status, Student.statuses.keys, { :include_blank => true } %>
-</div>  
-
-<div class="actions">
-    <%= f.submit %>
-</div>
-<% end %>
+<script>
+  // Privew Image
+  var avatar = $("#student_avatar");
+  avatar.addEventListener("change",previewImages,false); //bind the function to the input
+  function previewImages(){
+    var fileList = this.files;    
+    var anyWindow = window.URL || window.webkitURL;
+    var objectUrl = anyWindow.createObjectURL(fileList[0]);    
+    $('#preview-box').html('<img class="profileimg" src="' + objectUrl + '" /> ');
+    //$("#clear").show();
+  }
+</script>

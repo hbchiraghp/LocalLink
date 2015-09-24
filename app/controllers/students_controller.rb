@@ -7,6 +7,8 @@ class StudentsController < ApplicationController
     else      
       @students = Student.active
     end
+
+    @students = @students.paginate(:page => params[:page], :per_page => 10)
   end
   
   def show
