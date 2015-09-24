@@ -135,7 +135,7 @@
 <script>
   // Privew Image
   var avatar = $("#student_avatar");
-  avatar.addEventListener("change",previewImages,false); //bind the function to the input
+  avatar[0].addEventListener("change",previewImages,false); //bind the function to the input
   function previewImages(){
     var fileList = this.files;    
     var anyWindow = window.URL || window.webkitURL;
